@@ -8,7 +8,7 @@ function routeConfig ($stateProvider, $urlRouterProvider) {
         })
         .state('deliveries', {
             url: '/deliveries',
-            template: require('./screens/data-page.html'),
+            template: '<page-content data="$ctrl.data"></page-content>',
             resolve: {
                 settings: function (optionsService) {
                     return optionsService.getSettings()
@@ -26,27 +26,23 @@ function routeConfig ($stateProvider, $urlRouterProvider) {
                 console.log('settings',settings);
                 let data = dataPageService.getDeliveriesData();
 
-                this.title = data.title;
-                this.description = data.description;
-                this.text = data.text;
+                this.data = data;
             },
             controllerAs: '$ctrl'
         })
         .state('billings', {
             url: '/billings',
-            template: require('./screens/data-page.html'),
+            template: '<page-content data="$ctrl.data"></page-content>',
             controller: function (dataPageService) {
                 let data = dataPageService.getBillingsData();
 
-                this.title = data.title;
-                this.description = data.description;
-                this.text = data.text;
+                this.data = data;
             },
             controllerAs: '$ctrl'
         })
         .state('couriers', {
             url: '/couriers',
-            template: require('./screens/data-page.html'),
+            template: '<page-content data="$ctrl.data"></page-content>',
             data: {
                 permissions: {
                     only: ['ADMIN'],
@@ -56,9 +52,7 @@ function routeConfig ($stateProvider, $urlRouterProvider) {
             controller: function (dataPageService) {
                 let data = dataPageService.getCouriersData();
 
-                this.title = data.title;
-                this.description = data.description;
-                this.text = data.text;
+                this.data = data;
             },
             controllerAs: '$ctrl'
         });
