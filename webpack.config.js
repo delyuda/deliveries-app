@@ -1,15 +1,10 @@
-const path = require("path");
 const webpack = require("webpack");
 const merge = require('webpack-merge');
 
-// const autoprefixer = require('autoprefixer');
 const ExtractTextPlugin =  require('extract-text-webpack-plugin');
 
-// const CopyWebpackPlugin = require('copy-webpack-plugin');
-// const HtmlWebpackPlugin = require('html-webpack-plugin');
-
 const extractSass = new ExtractTextPlugin({
-    filename: "[name].[contenthash].css"
+    filename: "[name].[hash].css"
 });
 
 const cfg = require('./config/base');

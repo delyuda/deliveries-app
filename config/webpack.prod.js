@@ -1,6 +1,5 @@
 const webpack = require('webpack');
 
-// const CopyWebpackPlugin = require('copy-webpack-plugin');
 const HtmlWebpackPlugin = require('html-webpack-plugin');
 const ExtractTextPlugin =  require('extract-text-webpack-plugin');
 const CleanPlugin = require('clean-webpack-plugin');
