@@ -1,5 +1,7 @@
 class StorageService {
     constructor ($window, CONSTS) {
+        'ngInject';
+
         this.localStorage = $window.localStorage;
         this.CONSTS = CONSTS;
     }

@@ -1,5 +1,7 @@
 class OptionsService {
     constructor ($http, CONSTS) {
+        'ngInject';
+
         this.$http = $http;
         this.CONSTS = CONSTS;
     }

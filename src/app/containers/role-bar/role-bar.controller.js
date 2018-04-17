@@ -1,5 +1,7 @@
 class RoleBarController {
     constructor (optionsService, storageService, $state) {
+        'ngInject';
+
         this.optionsService = optionsService;
         this.storageService = storageService;
         this.$state = $state;

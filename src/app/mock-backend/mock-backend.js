@@ -1,4 +1,6 @@
 function mockBackend ($httpBackend) {
+    'ngInject';
+
     const deliveriesMockData = {
         title: 'Deliveries Page',
         description: 'Deliveries description',

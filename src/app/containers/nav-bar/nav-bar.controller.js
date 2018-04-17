@@ -1,5 +1,7 @@
 class NavBarController {
     constructor (storageService) {
+        'ngInject';
+
         this.storageService = storageService;
     }
 

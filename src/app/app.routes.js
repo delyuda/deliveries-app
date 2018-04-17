@@ -3,16 +3,22 @@ function routeConfig ($stateProvider, $urlRouterProvider) {
 
     const resolveData = {
         settings: function (optionsService) {
+            'ngInject';
+
             return optionsService.getSettings()
                 .then( response => response.data);
         },
 
         payments: function (optionsService) {
+            'ngInject';
+
             return optionsService.getPayments()
                 .then( response => response.data);
         },
 
         roles: function (optionsService) {
+            'ngInject';
+
             return optionsService.getRoles()
                 .then( response => response.data);
         }
@@ -28,6 +34,8 @@ function routeConfig ($stateProvider, $urlRouterProvider) {
             template: '<page-content data="$ctrl.data"></page-content>',
             resolve: resolveData,
             controller: function (dataPageService, settings, payments, roles) {
+                'ngInject';
+
                 console.log('settings',settings);
                 dataPageService.getDeliveriesData()
                     .then( (response) => {
@@ -41,6 +49,8 @@ function routeConfig ($stateProvider, $urlRouterProvider) {
             template: '<page-content data="$ctrl.data"></page-content>',
             resolve: resolveData,
             controller: function (dataPageService, settings, payments, roles) {
+                'ngInject';
+
                 console.log('billings settings',settings);
                 dataPageService.getBillingsData()
                     .then( (response) => {
@@ -60,6 +70,8 @@ function routeConfig ($stateProvider, $urlRouterProvider) {
                 }
             },
             controller: function (dataPageService, settings, payments, roles) {
+                'ngInject';
+
                 console.log('couriers settings',settings);
                 dataPageService.getCouriersData()
                     .then( (response) => {
