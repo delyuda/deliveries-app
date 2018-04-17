@@ -1,6 +1,6 @@
 import angular from 'angular';
 
-import 'angular-ui-router';
+import '@uirouter/angularjs';
 import 'angular-permission';
 import 'angular-mocks';
 import 'bootstrap/dist/css/bootstrap.min.css';
