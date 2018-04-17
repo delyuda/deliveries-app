@@ -1,10 +1,11 @@
 class StorageService {
-    constructor ($window) {
+    constructor ($window, CONSTS) {
         this.localStorage = $window.localStorage;
+        this.CONSTS = CONSTS;
     }
 
     getRole () {
-        return this.localStorage.getItem('role');
+        return this.localStorage.getItem('role') || this.CONSTS.defaultRole;
     }
 
     setRole (role) {

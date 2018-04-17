@@ -26,9 +26,20 @@ class OptionsService {
     getRoles () {
         // return this.$http.get(this.CONSTS.URLS.ROLES);
 
-        return {
-            roles: ['admin', 'user']
-        }
+        return [
+            {
+                title: 'Admin',
+                value: 'ADMIN'
+            },
+            {
+                title: 'User',
+                value: 'USER'
+            },
+            {
+                title: 'Guest',
+                value: 'GUEST'
+            }
+        ];
     }
 }
 

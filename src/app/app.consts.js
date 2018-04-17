@@ -7,6 +7,9 @@ const URLS = {
     ROLES: '/api/roles'
 };
 
+const defaultRole = 'GUEST';
+
 export default {
-    URLS
+    URLS,
+    defaultRole
 };
