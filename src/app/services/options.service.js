@@ -5,15 +5,27 @@ class OptionsService {
     }
 
     getSettings () {
-        return this.$http.get(this.CONSTS.URLS.SETTINGS);
+        if (!this.settingsPromise) {
+            this.settingsPromise = this.$http.get(this.CONSTS.URLS.SETTINGS);
+        }
+
+        return this.settingsPromise;
     }
 
     getPayments () {
-        return this.$http.get(this.CONSTS.URLS.PAYMENTS);
+        if (!this.paymentsPromise) {
+            this.paymentsPromise = this.$http.get(this.CONSTS.URLS.PAYMENTS);
+        }
+
+        return this.paymentsPromise;
     }
 
     getRoles () {
-        return this.$http.get(this.CONSTS.URLS.ROLES);
+        if (!this.rolesPromise) {
+            this.rolesPromise = this.$http.get(this.CONSTS.URLS.ROLES);
+        }
+
+        return this.rolesPromise;
     }
 }
 
