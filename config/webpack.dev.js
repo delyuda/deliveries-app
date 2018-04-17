@@ -24,7 +24,7 @@ const config = {
             title: cfg.package.name,
             template: cfg.paths.htmlPath,
             inject: 'body',
-            hash: true
+            hash: false
         }),
         new ExtractTextPlugin('css/[name].css', {disable: true}),
         new webpack.DefinePlugin({

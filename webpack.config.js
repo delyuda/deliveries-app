@@ -4,7 +4,7 @@ const merge = require('webpack-merge');
 const ExtractTextPlugin =  require('extract-text-webpack-plugin');
 
 const extractSass = new ExtractTextPlugin({
-    filename: "[name].[hash].css"
+    filename: "[name].css"
 });
 
 const cfg = require('./config/base');

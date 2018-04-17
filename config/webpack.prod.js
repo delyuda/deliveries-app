@@ -11,25 +11,14 @@ const config = {
     output: {
         publicPath: ''
     },
-    mode: "production",
+    mode: "development",
     plugins: [
         new HtmlWebpackPlugin({
             title: cfg.package.name,
             template: cfg.paths.htmlPath,
             filename: cfg.paths.outputHtml,
             inject: 'body',
-            hash: true,
-            minify: {
-                removeComments: true,
-                collapseWhitespace: true,
-                removeRedundantAttributes: true,
-                useShortDoctype: true,
-                removeEmptyAttributes: true,
-                removeStyleLinkTypeAttributes: true,
-                keepClosingSlash: true,
-                minifyJS: true,
-                minifyCSS: true
-            }
+            hash: false
         }),
         new CleanPlugin([cfg.paths.output], {
             root: cfg.paths.root
