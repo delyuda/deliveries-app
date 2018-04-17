@@ -2,6 +2,7 @@ import angular from 'angular';
 
 import 'angular-ui-router';
 import 'angular-permission';
+import 'angular-mocks';
 
 import routerConfig from './app.routes';
 import CONSTS from './app.consts.js';
@@ -14,12 +15,14 @@ import OptionsService from './services/options.service';
 import StorageService from './services/storage.service';
 
 import roles from './app.roles';
+import mockBackend from './mock-backend/mock-backend';
 
 angular
     .module('deliveriesApp', [
         'ui.router',
         'permission',
         'permission.ui',
+        'ngMockE2E',
         ComponentsModule,
         ContainersModule
     ])
@@ -32,4 +35,4 @@ angular
         $locationProvider.html5Mode(true);
     }])
     .run(roles)
-    .name;
+    .run(mockBackend);

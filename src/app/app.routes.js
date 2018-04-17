@@ -4,14 +4,17 @@ function routeConfig ($stateProvider, $urlRouterProvider) {
     const resolveData = {
         settings: function (optionsService) {
             return optionsService.getSettings()
+                .then( response => response.data);
         },
 
         payments: function (optionsService) {
-            return optionsService.getPayments();
+            return optionsService.getPayments()
+                .then( response => response.data);
         },
 
         roles: function (optionsService) {
-            return optionsService.getRoles();
+            return optionsService.getRoles()
+                .then( response => response.data);
         }
     };
 
@@ -26,9 +29,10 @@ function routeConfig ($stateProvider, $urlRouterProvider) {
             resolve: resolveData,
             controller: function (dataPageService, settings, payments, roles) {
                 console.log('settings',settings);
-                let data = dataPageService.getDeliveriesData();
-
-                this.data = data;
+                dataPageService.getDeliveriesData()
+                    .then( (response) => {
+                        this.data = response.data;
+                    });
             },
             controllerAs: '$ctrl'
         })
@@ -38,9 +42,10 @@ function routeConfig ($stateProvider, $urlRouterProvider) {
             resolve: resolveData,
             controller: function (dataPageService, settings, payments, roles) {
                 console.log('billings settings',settings);
-                let data = dataPageService.getBillingsData();
-
-                this.data = data;
+                dataPageService.getBillingsData()
+                    .then( (response) => {
+                        this.data = response.data;
+                    });
             },
             controllerAs: '$ctrl'
         })
@@ -56,9 +61,10 @@ function routeConfig ($stateProvider, $urlRouterProvider) {
             },
             controller: function (dataPageService, settings, payments, roles) {
                 console.log('couriers settings',settings);
-                let data = dataPageService.getCouriersData();
-
-                this.data = data;
+                dataPageService.getCouriersData()
+                    .then( (response) => {
+                        this.data = response.data;
+                    });
             },
             controllerAs: '$ctrl'
         });

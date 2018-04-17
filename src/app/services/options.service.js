@@ -5,41 +5,15 @@ class OptionsService {
     }
 
     getSettings () {
-        // return this.$http.get(this.CONSTS.URLS.SETTINGS);
-
-        return {
-            settings: {
-                a: 1,
-                b: 2
-            }
-        }
+        return this.$http.get(this.CONSTS.URLS.SETTINGS);
     }
 
     getPayments () {
-        // return this.$http.get(this.CONSTS.URLS.PAYMENTS);
-
-        return {
-            payments: [1,5,4,3,2]
-        }
+        return this.$http.get(this.CONSTS.URLS.PAYMENTS);
     }
 
     getRoles () {
-        // return this.$http.get(this.CONSTS.URLS.ROLES);
-
-        return [
-            {
-                title: 'Admin',
-                value: 'ADMIN'
-            },
-            {
-                title: 'User',
-                value: 'USER'
-            },
-            {
-                title: 'Guest',
-                value: 'GUEST'
-            }
-        ];
+        return this.$http.get(this.CONSTS.URLS.ROLES);
     }
 }
 

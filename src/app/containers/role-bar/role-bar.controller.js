@@ -6,7 +6,18 @@ class RoleBarController {
     }
 
     $onInit () {
-        this.roles = this.optionsService.getRoles();
+        this.getRoles();
+        this.getActiveRole();
+    }
+
+    getRoles () {
+        this.optionsService.getRoles()
+            .then( response => {
+                this.roles = response.data;
+            });
+    }
+
+    getActiveRole () {
         this.activeRole = this.storageService.getRole();
     }
 
