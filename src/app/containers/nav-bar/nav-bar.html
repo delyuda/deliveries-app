@@ -1,7 +1,16 @@
-<div>
-    <ul>
-        <li><a ng-href="/deliveries">Deliveries</a></li>
-        <li><a ng-href="/billings">Billings</a></li>
-        <li ng-if="$ctrl.role === 'ADMIN'"><a ng-href="/couriers">Couriers</a></li>
+<nav class="navbar navbar-expand-lg navbar-light bg-light">
+    <ul class="navbar-nav">
+        <li class="nav-item" ui-sref-active="active" ui-sref="home">
+            <a ng-href="/home" class="nav-link">Home</a>
+        </li>
+        <li class="nav-item" ui-sref-active="active" ui-sref="deliveries">
+            <a ng-href="/deliveries" class="nav-link">Deliveries</a>
+        </li>
+        <li class="nav-item" ui-sref-active="active" ui-sref="billings">
+            <a ng-href="/billings" class="nav-link">Billings</a>
+        </li >
+        <li ng-if="$ctrl.role === 'ADMIN'" class="nav-item" ui-sref-active="active" ui-sref="couriers">
+            <a ng-href="/couriers" class="nav-link">Couriers</a>
+        </li>
     </ul>
-</div>
+</nav>

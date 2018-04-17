@@ -3,6 +3,9 @@ import angular from 'angular';
 import 'angular-ui-router';
 import 'angular-permission';
 import 'angular-mocks';
+import 'bootstrap/dist/css/bootstrap.min.css';
+
+import './assets/styles/main.scss';
 
 import routerConfig from './app.routes';
 import CONSTS from './app.consts.js';

@@ -1,15 +1,18 @@
-<div>
+<div class="col-md-12 page-content">
     <role-bar></role-bar>
     <nav-bar></nav-bar>
 
-    {{$ctrl.data.title}}
+    <h1 class="page-content__page-title">
+        {{$ctrl.data.title}}
+    </h1>
 
-    <h2>Description</h2>
-    <p>
+    <h3 class="page-content__title">Description:</h3>
+    <p class="page-content__paragraph">
         {{$ctrl.data.description}}
     </p>
-    <h2>Text</h2>
-    <p>
+
+    <h3 class="page-content__title">Text:</h3>
+    <p class="page-content__paragraph">
         {{$ctrl.data.text}}
     </p>
 </div>

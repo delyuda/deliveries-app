@@ -1,0 +1,21 @@
+.role-bar {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: flex-end;
+}
+
+.role-list {
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
+  display: flex;
+
+  &__item {
+    padding: 5px 15px;
+  }
+}
+
+.role-label,
+.role-radio {
+  cursor: pointer;
+}

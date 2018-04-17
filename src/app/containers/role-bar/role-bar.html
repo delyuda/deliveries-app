@@ -1,11 +1,14 @@
-<div>
-    <ul>
-        <li ng-repeat="role in $ctrl.roles">
+<div class="role-bar">
+    <ul class="role-list">
+        <li ng-repeat="role in $ctrl.roles" class="role-list__item">
             <input type="radio" value="{{role.value}}" name="role"
                    ng-model="$ctrl.activeRole"
                    ng-change="$ctrl.changeRole()"
-                   id="role-input-{{$index}}" />
-            <label for="role-input-{{$index}}">{{role.title}}</label>
+                   id="role-input-{{$index}}"
+                   class="role-label" />
+            <label for="role-input-{{$index}}" class="role-label">
+                {{role.title}}
+            </label>
         </li>
     </ul>
 </div>
